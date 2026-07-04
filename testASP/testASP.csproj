@@ -13,4 +13,15 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\Mappers\" />
+    <Folder Include="Application\Validators\" />
+    <Folder Include="Application\Handlers\" />
+    <Folder Include="Application\DTO\" />
+    <Folder Include="Core\Enums\" />
+    <Folder Include="Core\Exceptions\" />
+    <Folder Include="Core\Services\" />
+    <Folder Include="Infrastructure\Mappers\" />
+  </ItemGroup>
+
 </Project>

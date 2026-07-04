@@ -5,29 +5,13 @@ namespace testASP.Controllers
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
-    {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
-
+    {//сюда нужно будет так же забросить через конструктор интерфейс нужного Handle, который будет использовать нужный репозиторий и через его методы делать запросы CRUDE.
+     //Само собой в этих Handlers будет преобразование в нужную DTO посредством мапера из Application и эту DTO мы получаем уже тут в методах, а дальше отправляем по запросу
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public List<string> Get(int id)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            List<string> somethingData = new List<string>();
+            return somethingData;
         }
     }
 }
